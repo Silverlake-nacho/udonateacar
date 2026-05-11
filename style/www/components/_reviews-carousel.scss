@@ -1,0 +1,191 @@
+.reviews-carousel {
+  $this: ".reviews-carousel";
+
+  width: 85%;
+  max-width: 1100px;
+  position: relative;
+  margin: 50px auto;
+  text-align: center;
+
+  &__wrapper {
+    position: relative;
+    text-align: center;
+    padding: 90px 0;
+    min-height: 400px;
+    background: #ffffff;
+
+    &--no-padding {
+      padding: 0;
+      margin-top: 50px;
+    }
+  }
+
+  &__header {
+    color: #0d1b30;
+    font-size: 28px;
+    margin: 0 auto 30px;
+    max-width: 85%;
+    text-align: center;
+  }
+
+  &__button {
+    font-family: "Font Awesome 5 Pro";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 30px;
+    color: #a7a7a7;
+    cursor: pointer;
+    outline: none;
+
+    &-prev {
+      left: 0;
+    }
+
+    &-next {
+      right: 0;
+    }
+  }
+
+  &__item {
+    width: 80%;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+
+    &__quote {
+      font-size: 20px;
+      color: #4ace8d;
+    }
+
+    &__para {
+      font-size: 22px;
+      color: #004047;
+      padding: 25px 0;
+      letter-spacing: .5px;
+      line-height: 50px;
+    }
+
+    &__stars {
+      font-size: 20px;
+      color: gold;
+    }
+
+    &__user {
+      font-size: 16px;
+
+      a {
+        color: #002226;
+      }
+    }
+
+    &__headshot {
+      width: 100px;
+      display: block;
+      margin: -20px auto 20px;
+      border-radius: 50%;
+    }
+
+    &__trustpilot {
+      width: 100px;
+      margin: 0 auto;
+    }
+
+    &--wide {
+      width: 100%;
+
+      #{$this}__item__para {
+        margin: 0 0 20px;
+        padding: 0 0 20px;
+        letter-spacing: inherit;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__trustpilot {
+    margin: 20px auto 0;
+    max-width: 60px;
+
+    &__basic {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 270px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 90px;
+    left: 5%;
+    top: -50px;
+    transform: translateY(-50%);
+    opacity: .04;
+
+    &-right {
+      left: inherit;
+      top: inherit;
+      right: 5%;
+      bottom: -75px;
+    }
+  }
+
+  &__google {
+    width: 140px;
+    margin-top: 30px;
+  }
+
+  &--wide {
+    width: 85%;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 20px auto;
+
+    &:before, &:after, &__icon, &__google {
+      display: none;
+    }
+
+    &__wrapper {
+      padding: 90px 0;
+
+      &--no-padding {
+        padding: 0;
+      }
+    }
+
+    &__button {
+      position: static;
+      bottom: -75px;
+      margin: 50px 20px 0;
+    }
+
+    &__trustpilot__basic {
+      width: 170px;
+    }
+
+    &__item {
+      &__para {
+        padding: 0 0 10px;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 32px;
+      }
+
+      &__user {
+        color: #97A2B2;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 26px;
+      }
+    }
+  }
+}

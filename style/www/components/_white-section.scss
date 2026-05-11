@@ -1,0 +1,134 @@
+.white-section {
+  background: #ffffff;
+  position: relative;
+
+  &__blurb {
+    color: #272F3A;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  &__sbs {
+    margin: 50px 0;
+
+    h4 {
+      color: #272F3A;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 34px;
+      color: #626E7E;
+    }
+
+    img {
+      width: 90%;
+      max-width: 370px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    &--larger-image img {
+      width: 430px;
+      max-width: 90%;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    color: #272F3A;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__text {
+    color: #626E7E;
+    font-size: 15px;
+    line-height: 36px;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__button {
+    display: table;
+    border-radius: 2px;
+    background-color: #94BA0F;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    line-height: 18px;
+    padding: 16px 24px;
+    margin: 24px auto 40px;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    z-index: 0;
+  }
+
+  &:before {
+    background: linear-gradient(0deg, #ffffff, transparent);
+    top: -60px;
+  }
+
+  &:after {
+    background: linear-gradient(180deg, #ffffff, #ffffff 25%, transparent);
+    height: 160px;
+    bottom: -160px;
+  }
+
+  &--no-fade-top {
+    &:before {
+      content: none;
+    }
+  }
+
+  &--padded-top {
+    padding-top: 120px;
+  }
+
+  @media (max-width: 1024px) {
+    &__blurb {
+      font-size: 16px;
+      line-height: 32px;
+      margin: 0;
+    }
+
+    &__sbs {
+      h4 {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__sbs {
+      margin: 20px 0;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.your-vehicle {
+  &__title {
+    font-size: 33px;
+    letter-spacing: -1px;
+    line-height: 29px;
+    color: #94ba0f;
+    font-weight: 300;
+  }
+
+  &__reg {
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 29px;
+    color: #333333;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  &__detail {
+    margin-bottom: 15px;
+
+    &__wrong-details {
+      font-size: 12px;
+      font-weight: 300;
+      background: #8f9aa7;
+      padding: 8px 15px 8px 40px;
+      cursor: pointer;
+      color: #ffffff !important;
+      border-radius: 5px;
+      display: table;
+      background-image: url("/static/images/edit.png");
+      background-repeat: no-repeat;
+      background-position: 12px 8px;
+      background-size: 16px;
+    }
+
+    p {
+      font-size: 13px;
+      color: #999999;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    span {
+      font-size: 17px;
+      color: #333333;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__wrong-details {
+      margin: 0 auto;
+    }
+  }
+}

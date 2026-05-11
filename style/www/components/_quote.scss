@@ -1,0 +1,556 @@
+.quote {
+  background-image: url("/static/images/background-quote.png");
+  background-position-x: center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+  min-height: calc(100vh - 110px);
+  background-size: cover;
+
+  &__title {
+    font-size: 67px;
+    letter-spacing: -2px;
+    line-height: 90px;
+    color: #94ba0f;
+    font-weight: 300;
+    text-align: center;
+    margin: 5px 0 0;
+
+    &--amount {
+      font-size: 115px;
+      line-height: 90px;
+      color: #333333;
+      font-weight: 300;
+      text-align: center;
+      margin: 20px 0 0;
+      background-image: url("/static/images/say-yes-desktop2.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 240px;
+      position: relative;
+
+      b {
+        margin-left: 30px;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: -25%;
+          left: -10%;
+          height: 150%;
+          width: 120%;
+          background-image: url("/static/images/value-marker.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: 23px;
+    letter-spacing: -1px;
+    line-height: 50px;
+    color: #333333;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &__vehicle-details {
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.33);
+  }
+
+  &__your-vehicle {
+    background: #ffffff;
+
+    &__box {
+      padding: 30px 25px;
+    }
+  }
+
+  &__form {
+    padding: 30px 50px;
+    border-radius: 5px 0 0 5px;
+
+    &__title {
+      font-size: 34px;
+      line-height: 29px;
+      color: #333333;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    &__subtitle {
+      font-size: 17px;
+      margin-top: 25px;
+      line-height: 27px;
+    }
+
+    &__submit {
+      margin-top: 20px;
+
+      &--main {
+        float: right;
+      }
+
+      &--secondary {
+        float: right;
+        font-size: 14px;
+        background: #8f9aa7;
+        border: 2px solid #ffffff;
+        border-radius: 8px;
+        color: #ffffff;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 4px 20px;
+        margin: 14px 14px 14px 0;
+
+        &:hover {
+          color: #ffffff;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__help {
+      float: right;
+      font-size: 11px;
+      line-height: 58px;
+      color: #333333;
+      font-weight: 400;
+
+      a {
+        color: #333333;
+        text-decoration: underline;
+        margin-right: 10px;
+      }
+    }
+
+    &__no {
+      padding: 4px 25px 4px 40px;
+      background-image: url("/static/images/cross.png");
+      background-repeat: no-repeat;
+      background-position: 16px 8px;
+      background-size: 12px;
+    }
+
+    &__yes {
+      padding: 10px 30px 10px 50px;
+      background-image: url("/static/images/tick.png");
+      background-repeat: no-repeat;
+      background-position: 20px 10px;
+      background-size: 20px;
+    }
+
+    &__button {
+      display: table;
+      font-size: 18px;
+      background: #f66101;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 300;
+      line-height: 20px;
+      padding: 10px 25px;
+      margin: 8px 0;
+    }
+  }
+
+  &__copyright {
+    display: block;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 60px;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__question {
+    margin-top: 25px;
+
+    &__title {
+      font-size: 19px;
+      color: #333333;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    &__button {
+      font-size: 14px;
+      background: #8f9aa7;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 400;
+      line-height: 20px;
+      padding: 6px 16px;
+      position: absolute;
+      right: 10px;
+      top: 16px;
+
+      &:hover {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+
+    &--checkbox {
+      border-bottom: 1px solid #e0e0e0;
+
+      &:first-of-type {
+        border-top: 1px solid #e0e0e0;
+      }
+
+      &__box {
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin: 0;
+
+        &:hover input ~ .quote__question-checkbox__custom {
+          background-color: #e4e4e4;
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+
+          &:checked {
+            & ~ .quote-page__question--checkbox__custom:after, & ~ .quote__question--checkbox__custom__u:after {
+              display: block;
+            }
+          }
+        }
+
+        .quote__question-checkbox__custom:after, .quote__question--checkbox__custom__u:after {
+          left: 5px;
+          top: -5px;
+          width: 8px;
+          height: 14px;
+          border: solid #94ba0f;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+
+      &__custom {
+        position: absolute;
+        top: calc(50% - 7px);
+        left: 0;
+        height: 14px;
+        width: 14px;
+        background-color: #ffffff;
+        border: 1px solid #cacaca;
+
+        &__u {
+          position: absolute;
+          top: calc(18% - 7px);
+          left: 0;
+          height: 14px;
+          width: 14px;
+          background-color: #ffffff;
+          border: 1px solid #cacaca;
+
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+      }
+
+      &__label {
+        color: #333333;
+        font-size: 14px;
+        padding: 10px 25px;
+        line-height: 24px;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+
+        &--price {
+          float: right;
+          color: #94ba0f;
+        }
+
+        &--information {
+          color: #808080;
+          margin-left: 20px;
+          padding: 5px 0 5px 30px;
+          background-image: url("/static/images/info-circle.png");
+          background-repeat: no-repeat;
+          background-position: 0;
+        }
+
+        &--title-udonate {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &--radio {
+      display: block;
+
+      &__box {
+        background: #ffffff;
+        padding: 15px;
+        cursor: pointer;
+      }
+
+      &__image {
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 100%;
+          max-width: 90px;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      &__title {
+        font-size: 18px;
+        color: #333333;
+        font-weight: 400;
+      }
+
+      &__description {
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 24px;
+        color: #999999;
+        font-weight: 400;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .quote-page__question-radio__box {
+          border: 4px solid #94ba0f;
+          padding: 11px;
+        }
+      }
+
+      &:hover {
+        .quote__question--radio__box {
+          background-color: #e4e4e4;
+        }
+      }
+    }
+
+    &--text, &--select {
+      padding: 15px 10px 15px 58px;
+      background-image: url("/static/images/speedo.png");
+      background-repeat: no-repeat;
+      background-position: 15px 50%;
+      background-size: 20px;
+      font-size: 18px;
+      border: none;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      -webkit-background-color: white;
+      background-color: white;
+      min-height: 57px;
+      margin: 0;
+
+      #expected-quote {
+        background-image: url("/static/images/car-icon.png");
+      }
+
+      #best-number, #email-address {
+        background-image: url("/static/images/email.png");
+      }
+
+      #name {
+        background-image: url("/static/images/person.png");
+      }
+
+      #telephone-number {
+        background-image: url("/static/images/phone.png");
+      }
+
+      #upload-photo, #house-number, #street, #city, #county, #post-code {
+        background-image: url("/static/images/cloud.png");
+      }
+    }
+
+    &--select {
+      background-image: url("/static/images/downchev-black.png");
+      background-position: calc(100% - 15px) 50%;
+    }
+
+    &--file {
+      background: white;
+      width: 100%;
+      height: 250px;
+      position: relative;
+      cursor: pointer;
+
+      &___box {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #999999;
+        font-weight: 400;
+        margin: 15px 0 0 0;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &--address input {
+      margin: 5px 0;
+    }
+
+    &--with-button {
+      position: relative;
+    }
+  }
+
+  &__modal {
+    &__top {
+      padding: 30px;
+    }
+
+    &__bottom {
+      padding: 30px 10%;
+      background: #f0f0f0;
+    }
+
+    &__title {
+      font-size: 33px;
+      max-width: 275px;
+      letter-spacing: -1px;
+      line-height: 35px;
+      color: #333333;
+      font-weight: 400;
+      margin: 15px auto 0;
+      text-align: center;
+    }
+
+    &__submit {
+      font-size: 18px;
+      background: #f66101;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 300;
+      line-height: 20px;
+      padding: 10px 30px;
+      display: table;
+      margin: 25px auto 0;
+    }
+
+    &:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .quote__question:first-of-type {
+      margin-top: 0;
+    }
+
+    .quote__question-text {
+      padding: 10px 10px 10px 52px;
+      font-size: 16px;
+      background-position: 14px 13px;
+      background-size: 24px;
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .logo img {
+      width: 160px;
+    }
+
+    .modal-content {
+      border: none;
+    }
+  }
+
+  input {
+    &::placeholder,
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-moz-placeholder {
+      color: #D3D3D3;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__title, &__title-amount {
+      font-size: 38px;
+      line-height: inherit;
+      margin: 30px 0;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__form {
+      padding: 30px 25px;
+    }
+
+    &__your-vehicle {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__question-text {
+      width: 100%;
+    }
+
+    &__form__subtitle-udonate {
+      text-align: center;
+    }
+  }
+}

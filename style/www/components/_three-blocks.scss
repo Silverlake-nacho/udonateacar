@@ -1,0 +1,64 @@
+.three-blocks {
+  $this: ".three-blocks";
+
+  padding: 0 0 60px;
+  margin-top: -120px;
+
+  &__title {
+    color: #94BA0F;
+    font-size: 31px;
+    line-height: 37px;
+    text-align: center;
+  }
+
+  &__box {
+    padding: 65px 40px;
+    text-align: center;
+
+    img {
+      height: 61px;
+    }
+
+    &__subtitle {
+      color: #272F3A;
+      font-size: 24px;
+      margin: 14px 0 16px;
+    }
+
+    &__text {
+      color: #97A2B2;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 30px;
+    }
+  }
+
+  @media(max-width: 1023px) {
+    margin: -110px auto 20px;
+    max-width: 90%;
+    padding: 0;
+
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &__box {
+      padding: 20px 0 15px;
+
+      &__subtitle {
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      &__text {
+        font-size: 14px;
+        line-height: 28px;
+      }
+
+      img {
+        height: 49px;
+      }
+    }
+  }
+}

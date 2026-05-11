@@ -1,0 +1,42 @@
+.wbav {
+  font-family: "Muli", sans-serif;
+  background: #f0f3f6;
+
+  &__footer {
+    background: #ffffff;
+    padding: 40px 0;
+
+    &__copyright {
+      font-size: 11px;
+      line-height: 25px;
+      color: #272f3a;
+      font-weight: 300;
+    }
+
+    &__social-links {
+      text-align: right;
+
+      a {
+        background: #83B00F;
+        margin-left: 10px;
+        display: inline-block;
+        line-height: 30px;
+        width: 30px;
+        color: white;
+        border-radius: 15px;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__footer {
+      text-align: center;
+
+      &__social-links {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+}

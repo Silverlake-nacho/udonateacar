@@ -1,0 +1,43 @@
+.testimonial {
+  background-image: url("/static/images/background-bottom.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0 280px;
+
+  &__mobile {
+    font-size: 16px;
+    line-height: 27px;
+    color: #333333;
+    font-weight: 400;
+    text-align: center;
+
+    &__image {
+      display: block;
+      margin: 40px auto;
+      width: 100px;
+    }
+
+    &__meta {
+      color: #94ba0f;
+      font-size: 14px;
+      text-align: center;
+      padding: 0;
+
+      li {
+        display: inline;
+
+        &:not(:first-of-type):before {
+          content: '•';
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: -160px;
+
+
+  }
+}

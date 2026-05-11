@@ -1,0 +1,17 @@
+.contact {
+  &__email, &__phone {
+    margin: 10px 0;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  &__map {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+  }
+}

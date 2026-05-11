@@ -1,0 +1,32 @@
+.dropzone {
+  background: #ffffff;
+  margin-top: 16px;
+  text-align: center;
+  padding: 75px;
+
+  &__upload {
+    pointer-events: none;
+
+    &__text {
+      margin-top: 10px;
+      color: #5c5c5c;
+    }
+  }
+
+  .dz-message, .dz-success-mark, .dz-remove {
+    display: none;
+  }
+
+  .dz-preview {
+    display: inline-block;
+    margin: 0 16px;
+  }
+
+  .dz-error-mark {
+    display: inline-block;
+  }
+
+  svg {
+    fill: #a3a3a3;
+  }
+}
