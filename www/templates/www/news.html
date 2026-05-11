@@ -1,0 +1,60 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="wrap">
+        {% if featured %}
+            <div class="news__featured clearfix">
+                <img class="news__entry__image" src="{{ featured.featured_image.url }}">
+                <div class="news__featured__meta">
+                    <div class="news__entry__category">{{ featured.category|upper }}</div>
+                    <span class="news__entry__date">{{ featured.nice_date }}</span>
+                    <h4 class="news__entry__title">{{ featured.title }}</h4>
+                    <span class="news__entry__blurb">{{ featured.blurb }}</span>
+                    <a class="news__entry__button" href="{{ featured.link }}">READ MORE</a>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="news__header clearfix">
+            <h4 class="news__header__title">RECENT NEWS</h4>
+            <div class="news__header__filter__holder clearfix">
+                <select class="news__header__filter" name="news-filter">
+                    <option value="recent" {% if filter == "recent" %}selected{% endif %}>Recent posts</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="news grid-x">
+            {% for entry in objects %}
+                <div class="cell large-4 medium-6">
+                    <a class="news__entry" href="{{ entry.link }}">
+                        <div class="news__entry__category">{{ entry.category|upper }}</div>
+                        <img class="news__entry__image" src="{{ entry.featured_image.url }}">
+                        <span class="news__entry__date">{{ entry.nice_date }}</span>
+                        <h4 class="news__entry__title">{{ entry.title }}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if total_pages > 1 %}
+            <div class="news__pages">
+                {% if previous_page %}
+                    <a class="news__pages__button" href="{{ previous_page }}">NEWER</a>
+                {% endif %}
+
+                {% for page in page_list %}
+                    <a class="news__pages__link" href="{{ page.link }}">{{ page.id }}</a>
+                {% endfor %}
+
+                {% if next_page %}
+                    <a class="news__pages__button news__pages__button--right" href="{{ next_page }}">OLDER</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block reviews %}{% endblock %}
+{% block three_blocks %}{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block snout %}
+    {% include "www/fragments/live-chat.html" %}
+{% endblock %}
+
+{% block body_class %}hero__blue--gradient{% endblock %}
+
+{% block body %}
+    {% block titles %}
+        <div class="wrap">
+            <a href="{% url 'www:index' %}">
+                <img class="hero__logo hero__logo--margin-top" src="{% static 'images/udac-short.png' %}"
+                    alt="UDonateacar logo">
+            </a>
+            <h1 class="hero__title">{% block h1 %}{% endblock %}</h1>
+            <h2 class="hero__subtitle hero__subtitle--alt {% block extra_subtitle_classes %}{% endblock %}">
+                {% block h2 %}{% endblock %}
+            </h2>
+        </div>
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block reviews %}
+        {% include "www/fragments/testimonial.html" %}
+    {% endblock %}
+
+    {% block three_blocks %}
+        <section class="three-blocks">
+            <div class="wrap">
+                <div class="three-blocks__title">We make donating your vehicle a breeze.</div>
+                <div class="grid-x">
+                    <div class="three-blocks__box cell large-4 medium-12">
+                        <img src="{% static 'images/hand-heart-icon.png' %}" alt="hand heart icon">
+                        <div class="three-blocks__box__subtitle">Trusted</div>
+                        <div class="three-blocks__box__text">
+                            We are one of the most experienced vehicle salvage / breakers
+                            in the UK and we pride ourselves on our good track record.
+                        </div>
+                    </div>
+                    <div class="three-blocks__box cell large-4 medium-12">
+                        <img src="{% static 'images/fair-icon.png' %}" alt="fair icon">
+                        <div class="three-blocks__box__subtitle">Fair</div>
+                        <div class="three-blocks__box__text">
+                            We cut out the middle-man and we are industry experts,
+                            running a professional and quality service.
+                        </div>
+                    </div>
+                    <div class="three-blocks__box cell large-4 medium-12">
+                        <img src="{% static 'images/secure-icon.png' %}" alt="secure icon">
+                        <div class="three-blocks__box__subtitle">Secure</div>
+                        <div class="three-blocks__box__text">
+                            We own the collection vehicles and the Automotive Treatment
+                            Facilities licensed to dispose of "End of Life" vehicles.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+
+    {% include "www/fragments/quote-form-small.html" %}
+
+    {% include "www/fragments/logos.html" %}
+{% endblock %}

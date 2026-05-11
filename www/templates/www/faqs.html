@@ -1,0 +1,51 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block body_class %}hero__blue{% endblock %}
+
+{% block h1 %}FREQUENTLY ASKED<br><b>QUESTIONS</b>{% endblock %}
+{% block h2 %}
+    We’ve listed the most common questions we get asked and their answers below. We hope
+    they’re helpful. We’ll continue to add new questions to the list as they come up.
+{% endblock %}
+{% block extra_subtitle_classes %}hero__subtitle--large{% endblock %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="faqs clearfix">
+            <div class="faqs__list">
+                {% for entry in faqs %}
+                    {% if entry.modulo == 0 %}
+                        <div class="faqs__question" data-faq-question>
+                            <div class="faqs__question__title">{{ entry.faq.question }}</div>
+                            <div class="faqs__question__answer" data-faq-question-answer>
+                                {{ entry.faq.answer|safe }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="faqs__list">
+                {% for entry in faqs %}
+                    {% if entry.modulo == 1 %}
+                        <div class="faqs__question" data-faq-question>
+                            <div class="faqs__question__title">{{ entry.faq.question }}</div>
+                            <div class="faqs__question__answer" data-faq-question-answer>
+                                {{ entry.faq.answer|safe }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="white-section white-section--padded-top">
+        <div class="wrap wrap--thin">
+            <h4 class="white-section__title">Can't see an answer to your question?</h4>
+            <p class="white-section__text">
+                The UDonateacar team will be happy to answer any other enquiries you might have.
+            </p>
+            <a class="white-section__button" href="{% url 'www:contact' %}">CONTACT US</a>
+        </div>
+    </div>
+{% endblock %}

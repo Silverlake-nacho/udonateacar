@@ -1,0 +1,58 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="news__featured news__featured--single clearfix">
+            <img class="news__entry__image" src="{{ post.featured_image.url }}">
+            <div class="news__featured--single__interior">
+                <div class="news__entry__category">{{ post.category|upper }}</div>
+                <div class="news__featured--single__title-box">
+                    <span class="news__entry__date">{{ post.nice_date }}</span>
+                    <h1 class="news__entry__title">{{ post.title }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="news__content">
+            {% if post.pre_content %}
+                <div class="news__content--pre">{{ post.pre_content|safe }}</div>
+            {% endif %}
+
+            {{ post.content|safe }}
+
+            <div class="news__content__share">
+                Share this story
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://udonateacar.com{{ post.link|urlencode }}">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20post%20https://udonateacar.com{{ post.link|urlencode }}">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https://udonateacar.com{{ post.link|urlencode }}">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="news__header clearfix">
+            <h4 class="news__header__title">MORE NEWS</h4>
+        </div>
+
+        <div class="news grid-x">
+            {% for entry in related %}
+                <div class="cell large-4 medium-6">
+                    <a class="news__entry" href="{{ entry.link }}">
+                        <div class="news__entry__category">{{ entry.category }}</div>
+                        <img class="news__entry__image" src="{{ entry.featured_image.url }}">
+                        <span class="news__entry__date">{{ entry.nice_date }}</span>
+                        <h4 class="news__entry__title">{{ entry.title }}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block reviews %}{% endblock %}
+{% block three_blocks %}{% endblock %}

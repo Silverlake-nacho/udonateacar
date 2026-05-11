@@ -1,0 +1,51 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block h1 %}TESTIMONIALS{% endblock %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="news grid-x">
+            {% for entry in objects %}
+                <div class="cell large-4 medium-6">
+                    <a class="news__entry news__entry--small-padding" {% if not entry.embed_link %} href="{{ entry.image.url }}"{% endif %}>
+                        {% if entry.embed_link %}
+                            <div class="hero__video-scale hero__video-scale--large">
+                                <div>
+                                    <iframe width="1200" height="700" src="{{ entry.embed_link }}"
+                                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                                            clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        {% else %}
+                            <img class="hero__video-scale hero__video-scale--large" src="{{ entry.image.url }}">
+                        {% endif %}
+                        <span class="news__entry__date">{{ entry.nice_date }}</span>
+                        <h4 class="news__entry__title">{{ entry.content }}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if total_pages > 1 %}
+            <div class="news__pages">
+                {% if previous_page %}
+                    <a class="news__pages__button" href="{{ previous_page }}">NEWER</a>
+                {% endif %}
+
+                {% for page in page_list %}
+                    <a class="news__pages__link" href="{{ page.link }}">{{ page.id }}</a>
+                {% endfor %}
+
+                {% if next_page %}
+                    <a class="news__pages__button news__pages__button--right" href="{{ next_page }}">OLDER</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block reviews %}{% endblock %}
+{% block three_blocks %}{% endblock %}

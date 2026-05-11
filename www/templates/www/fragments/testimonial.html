@@ -1,0 +1,28 @@
+{% load static %}
+
+<div class="testimonial {{ extra_classes }}">
+    <div class="wrap">
+        <div class="reviews-carousel__trustpilot__basic">
+            <img src="{% static 'images/stars.png' %}">
+        </div>
+        <div class="reviews-carousel" data-carousel-container>
+            {% for review in reviews %}
+                <div class="reviews-carousel__item" data-carousel-item
+                        {% if forloop.first %}
+                     style="display: block;"
+                        {% else %}
+                     style="display: none;"
+                        {% endif %}>
+                    <div class="reviews-carousel__item__para">{{ review.content }}</div>
+                    <div class="reviews-carousel__item__user">{{ review.name }}</div>
+                </div>
+            {% endfor %}
+            <button class="reviews-carousel__button reviews-carousel__button-prev" data-carousel-controls="left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="reviews-carousel__button reviews-carousel__button-next" data-carousel-controls="right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block snout %}
+{#    {% include "www/fragments/live-chat.html" %}#}
+{% endblock %}
+
+{% block body_class %}wbav{% endblock %}
+
+{% block body %}
+    <div class="hero">
+        <div class="wrap">
+            <img class="hero__logo" src="{% static 'images/udac-short.png' %}" alt="UDonateacar logo">
+            <h1 class="hero__title">DONATE £5 OR MORE<br><b>TO CHARITY</b></h1>
+            <h2 class="hero__subtitle">We buy any vehicle and pay the best prices</h2>
+
+            <form class="hero__form quote-form grid-x grid-padding-x" data-signup-form>
+                <div class="cell medium-6 info__form--space">
+                    <div class="quote-form__side quote-form__side--registration">
+                        <img src="{% static 'images/star-circle.png' %}">
+                        <p>GB</p>
+                    </div>
+                    <input class="quote-form__registration" id="vrm" name="vrm" type="text" data-upper
+                           placeholder="Enter your reg">
+                </div>
+
+                <div class="cell medium-6 info__form--space">
+                    <div class="quote-form__side quote-form__side--postcode">
+                        <img src="{% static 'images/crown.png' %}">
+                        <p>GB</p>
+                    </div>
+                    <input class="quote-form__postcode" id="postcode" name="postcode" type="text" data-upper
+                           placeholder="Your postcode">
+                </div>
+                <a class="hero__form__submit" data-submit>
+                    Get my instant quote
+                    <i class="fas fa-play"></i>
+                </a>
+            </form>
+
+            <div class="hero__graphics clearfix">
+                <div class="hero__graphics__circle">
+                    <h4><b>YOU</b><br>CHOOSE</h4>
+                    <p>How much of<br>your car's value<br>you donate</p>
+                </div>
+                <div class="hero__graphics__video hero__video-scale hero__video-scale--mobile-only">
+                    <div>
+                        <iframe width="700" height="400" src="https://www.youtube.com/embed/EyWOtMsUdO0?controls=0
+                                &showinfo=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer;
+                                autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <a class="hero__graphics__circle" href="{% url 'www:charities' %}">
+                    <img src="{% static 'images/gmsn-transparent.png' %}" alt="global's make some noise logo">
+                    <span class="hero__graphics__circle__text">Official Charity<br>Partner</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-section">
+        <h2 class="barometer__title">HELP US RAISE £24,000 IN 2024</h2>
+
+        <div class="barometer wrap" data-barometer="24000">
+            <div class="barometer__labels">
+                <div>£0</div>
+                <div>£6,000</div>
+                <div>£12,000</div>
+                <div>£18,000</div>
+                <div>£24,000</div>
+            </div>
+            <div class="barometer__head"></div>
+            <div class="barometer__stalk">
+                <div class="barometer__stalk__inner" data-barometer-stalk></div>
+                <div class="barometer__stalk__lines"></div>
+            </div>
+        </div>
+
+        <span class="barometer__tagline">
+            UDonateacar is proud to have raised over a quarter of million pounds for charities since 2014
+        </span>
+
+        {% include "www/fragments/three-steps.html" %}
+    </div>
+
+    {% include "www/fragments/testimonial.html" %}
+
+    <div class="info">
+        <div class="wrap">
+            <h2 class="info__title">Why customers choose UDonateacar</h2>
+            <div class="grid-x grid-padding-x">
+                <div class="cell large-6">
+                    <div class="info__point">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell medium-3">
+                                <img src="{% static 'images/tag-icon.png' %}">
+                            </div>
+
+                            <div class="cell medium-9">
+                                <h4>Competitive Valuation</h4>
+                                <p>
+                                    You get a competitive price for your
+                                    car and can choose how much you donate.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell large-6">
+                    <div class="info__point">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell medium-3">
+                                <img src="{% static 'images/thumb-icon.png' %}">
+                            </div>
+
+                            <div class="cell medium-9">
+                                <h4>Hassle Free</h4>
+                                <p>
+                                    We handle all the DVLA paperwork and arrange to collect your car
+                                    when it’s convenient for you. As soon as we have collected your
+                                    car, we’ll make your chosen donation to Global Make Some Noise,
+                                    and any money owed to you will be in your account pronto!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell large-6">
+                    <div class="info__point">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell medium-3">
+                                <img src="{% static 'images/icon-fees.png' %}">
+                            </div>
+
+                            <div class="cell medium-9">
+                                <h4>Charity Pledge</h4>
+                                <p>
+                                    100% of your donation goes to our charity partner, Global’s Make
+                                    Some Noise, to fund grants for small charities that are vital to
+                                    improving the lives of vulnerable and disadvantaged people in local
+                                    communities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell large-6">
+                    <div class="info__point">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell medium-3">
+                                <img src="{% static 'images/tick-icon.png' %}">
+                            </div>
+
+                            <div class="cell medium-9">
+                                <h4>Protecting the Planet</h4>
+                                <p>
+                                    We de-pollute, destroy and recycle scrap vehicles at our
+                                    regulated Authorised Treatment Facility, helping to
+                                    reduce carbon emissions and protect the planet. Vehicles
+                                    in better condition may be dismantled for recycled parts
+                                    or re-sold at auction for repair and re-use.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "www/fragments/quote-form-small.html" %}
+
+    {% include "www/fragments/logos.html" %}
+{% endblock %}

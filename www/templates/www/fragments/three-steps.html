@@ -1,0 +1,33 @@
+{% load static %}
+
+<div class="three-steps wrap">
+    <div class="grid-x grid-padding-x">
+        <div class="cell large-4">
+            <div class="three-steps__card">
+                <div class="three-steps__card__number">1</div>
+                <h4>Get an instant quote</h4>
+                <p>We value your vehicle in minutes</p>
+                <img class="three-steps__card__image" src="{% static 'images/sixty-secs-shadow.png' %}"
+                     alt="sixty seconds timer">
+            </div>
+        </div>
+        <div class="cell large-4">
+            <div class="three-steps__card">
+                <div class="three-steps__card__number">2</div>
+                <h4>Arrange collection</h4>
+                <p>No need to leave the house</p>
+                <img class="three-steps__card__image three-steps__card__image--smaller"
+                     src="{% static 'images/collection-shadow.png' %}" alt="car recovery">
+            </div>
+        </div>
+        <div class="cell large-4">
+            <div class="three-steps__card">
+                <div class="three-steps__card__number">3</div>
+                <h4>Everyone gets paid</h4>
+                <p>It's that simple!</p>
+                <img class="three-steps__card__image three-steps__card__image--bumped"
+                     src="{% static 'images/paid-multi.png' %}" alt="paid you charity">
+            </div>
+        </div>
+    </div>
+</div>

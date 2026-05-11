@@ -1,0 +1,44 @@
+{% extends "www/capture/base.html" %}
+{% load static %}
+
+{% block form_title %}We need some contact details{% endblock %}
+{% block form_description %}
+    Before we can give you your quote, we need some contact details so we can send
+    you an email confirmation of the quote and get in touch about the offer.
+{% endblock %}
+
+{% block content %}
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-6 small-12">
+            <div class="quote__question">
+                <label class="quote__question__title" for="name">Your name</label>
+                <input class="quote__question--text" id="name" name="name" placeholder="First and last name">
+            </div>
+        </div>
+
+        <div class="cell medium-6 small-12">
+            <div class="quote__question">
+                <label class="quote__question__title" for="phone">Telephone number</label>
+                <input class="quote__question--text" type="tel" inputmode="tel" name="phone" id="phone" 
+                       placeholder="Telephone">
+            </div>
+        </div>
+
+        <div class="cell">
+            <div class="quote__question">
+                <label class="quote__question__title" for="email">Your email address</label>
+                <input class="quote__question--text" name="email" id="email" placeholder="Email" type="text">
+            </div>
+            <div class="quote__question">
+                <h5 class="quote__question__title">Upload photos of your car to help us give you a better quote (optional)</h5>
+                <a class="quote__form__button" data-dropzone-upload>Upload Image</a>
+                <div class="dropzone dz-clickable" data-dropzone>
+                    <div class="dropzone__upload" data-dropzone-content>
+                        <img src="{% static 'images/cloud.png' %}" alt="upload image">
+                        <div class="dropzone__upload__text">Click or drop files here to upload</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

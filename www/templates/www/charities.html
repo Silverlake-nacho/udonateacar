@@ -1,0 +1,64 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block body_class %}hero__blue{% endblock %}
+
+{% block h1 %}OUR CHARITY<br><b>PARTNER</b>{% endblock %}
+{% block h2 %}SUPPORT SMALL CHARITIES THAT MAKE A BIG DIFFERENCE{% endblock %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="hero--overlap">
+            <img src="{% static 'images/charity-image.jpg' %}" alt="global's make some noise charity laugh">
+            <div class="hero__badge">
+                <img src="{% static 'images/gmsn-transparent.png' %}" alt="global's make some noise logo">
+                <p>Official Charity<br>Partner</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-section white-section--no-fade-top white-section--padded-top">
+        <div class="wrap wrap--thin">
+            <p class="white-section__blurb">
+                Your donation will support small, local charities across the UK that are making a
+                difference to the lives of disadvantaged and vulnerable people in their communities.
+            </p>
+
+            <div class="grid-x grid-padding-x">
+                <div class="white-section__sbs cell large-6 small-order-2">
+                    <h4>Supporting Vital Charities</h4>
+                    <p>
+                        UDonateacar has teamed up with national charity Global’s Make Some Noise to
+                        support these vital charities whose services are needed more than ever since
+                        the Covid pandemic. Global distributes monies raised through a grants process.
+                        Grants are awarded to small, local charities that apply for funding and successfully
+                        meet the rigorous assessment and qualifying criteria.
+                    </p>
+                    <p>
+                        The services these charities supply include support for abuse and trauma, bereavement,
+                        homelessness, illness, isolation and loneliness, poverty, mental health, disability,
+                        carers and lack of opportunity.
+                    </p>
+                </div>
+                <div class="white-section__sbs cell large-6 small-order-1">
+                    <img src="{% static 'images/uk-map.jpg' %}" alt="uk charity map">
+                </div>
+                <div class="white-section__sbs cell large-6 small-order-3">
+                    <img src="{% static 'images/gmsn-large.png' %}" alt="globals make some noise logo large">
+                </div>
+                <div class="white-section__sbs cell large-6 small-order-4">
+                    <h4>Building relationships at a local level</h4>
+                    <p>
+                        In the Southampton area, where UDonateacar is based, the team has built relationships at a
+                        local level with charities supported by Global’s Make Some Noise. Yellow Door set up to prevent
+                        and respond to domestic and sexual abuse; Abby’s Heroes which supports children, teenagers,
+                        young adults and their families when diagnosed with cancer; and suicide prevention charity
+                        Andy’s Man Club. These charities are an outstanding example of the small, local charities
+                        supported by Global’s Make Some Noise. You can find more examples across the UK
+                        <a href="https://www.makesomenoise.com/about-us/" target="_blank">here.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

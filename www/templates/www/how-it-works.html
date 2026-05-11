@@ -1,0 +1,66 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block body_class %}hero__blue{% endblock %}
+
+{% block titles %}{% endblock %}
+
+{% block content %}
+    <div class="hero">
+        <div class="wrap">
+            <a href="{% url 'www:index' %}">
+                <img class="hero__logo" src="{% static 'images/udac-short.png' %}" alt="UDonateacar logo">
+            </a>
+            <h1 class="hero__title">HOW IT <b>WORKS</b></h1>
+
+            <div class="hero--overlap hero--overlap--alt-margin">
+                <div class="hero__video-scale hero__video-scale--large">
+                    <div>
+                        <iframe width="1200" height="700" src="https://www.youtube.com/embed/EyWOtMsUdO0?controls=0
+                    &showinfo=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer;
+                    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-section white-section--padded-top">
+        {% include "www/fragments/three-steps.html" %}
+
+        <div class="wrap wrap--thin">
+            <div class="grid-x grid-padding-x">
+                <div class="white-section__sbs white-section__sbs--larger-image cell large-6 small-order-1">
+                    <img src="{% static 'images/salvage-experts.png' %}" alt="silverlake salvage experts">
+                </div>
+                <div class="white-section__sbs cell large-6 small-order-2">
+                    <h4>What happens to your car?</h4>
+                    <p>
+                        Silverlake Automotive Recycling, the company that set up and runs UDonateacar, has a 10
+                        acre site in Shedfield, Southampton, classified as an Authorised Treatment Facility and
+                        regulated by the Environment Agency. Here, depending on its condition, your car will either
+                        be depolluted, destroyed and recycled; dismantled for recycled parts; or prepared for
+                        re-sale at auction. Silverlake reduces carbon emissions by recycling over 95% of every scrap
+                        car it handles.
+                    </p>
+                </div>
+                <div class="white-section__sbs cell large-6 small-order-4">
+                    <h4>Quality recycled car parts</h4>
+                    <p>
+                        The company dismantles and supplies quality graded and warranty assured recycled car parts
+                        like doors, panels and lights. These can be safely used to repair other damaged cars of the
+                        same model at a fraction of the cost of new parts and without the carbon emissions it takes
+                        to manufacture and transport new parts. Silverlake’s customers include insurers, bodyshops,
+                        garages, Local Authorities, Police, Fire & Rescue Services and the general public who can
+                        also visit its self-service U-Pick-It yard to safely remove car parts from breakers for
+                        themselves.
+                    </p>
+                </div>
+                <div class="white-section__sbs white-section__sbs--larger-image cell large-6 small-order-3">
+                    <img src="{% static 'images/cartoon-recycle.png' %}" alt="cartoon car recycle">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

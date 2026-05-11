@@ -1,0 +1,48 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block h1 %}{{ page.heading }}{% endblock %}
+
+{% if page.subheading %}
+    {% block h2 %}{{ page.subheading }}{% endblock %}
+{% endif %}
+
+{% block content %}
+    <div class="wrap">
+        {% if page.quote %}
+            <p class="news__quote">{{ page.quote }}</p>
+        {% endif %}
+
+        <div class="news grid-x">
+            {% for item in page.news_items.all %}
+                <div class="cell large-4 medium-6">
+                    <a class="news__entry" href="{{ item.link }}">
+                        <img class="news__entry__image" src="{{ item.featured_image.url }}">
+                        <span class="news__entry__date">{{ item.nice_date }}</span>
+                        <h4 class="news__entry__title">{{ item.title }}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+            {% for item in page.testimonial_items.all %}
+                <div class="cell large-4 medium-6">
+                    <a class="news__entry news__entry--small-padding">
+                        <div class="hero__video-scale hero__video-scale--large">
+                            <div>
+                                <iframe width="1200" height="700" src="{{ item.embed_link }}"
+                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                                        clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        <span class="news__entry__date">{{ item.nice_date }}</span>
+                        <h4 class="news__entry__title">{{ item.content }}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block reviews %}{% endblock %}
+{% block three_blocks %}{% endblock %}

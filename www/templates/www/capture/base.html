@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}wbav{% endblock %}
+{% block header %}{% endblock %}
+
+{% block body %}
+    <div class="quote">
+        <div class="wrap">
+            <img class="header__logo header__logo--big-center" src="{% static 'images/logo.png' %}" alt="UDonateacar logo">
+            <h1 class="quote__title">Donate your vehicle to charity</h1>
+            <div class="quote__vehicle-details">
+                <div class="grid-x">
+                    <div class="cell large-3 quote__your-vehicle">
+                        <div class="quote__your-vehicle__box">
+                            <div class="grid-x">
+                                <div class="cell large-12 medium-6 small-12">
+                                    <h4 class="your-vehicle__title">Your vehicle</h4>
+                                    <span class="your-vehicle__reg">{{ lead.registration }}</span>
+                                    <img class="your-vehicle__image" src="{{ lead.stock_image_url }}" alt="">
+                                </div>
+                                <div class="cell large-12 medium-6 small-12">
+                                    <div class="your-vehicle__detail">
+                                        <p>Make</p>
+                                        <span>{{ lead.car }}</span>
+                                    </div>
+                                    <div class="your-vehicle__detail">
+                                        <p>Location of vehicle</p>
+                                        <span>{{ lead.nice_location }}</span>
+                                    </div>
+
+                                    <div class="your-vehicle__detail">
+                                        <p>Engine</p>
+                                        <span>{{ lead.engine }}</span>
+                                    </div>
+                                    <div class="your-vehicle__detail">
+                                        <p>Colour</p>
+                                        <span>{{ lead.color }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell large-9">
+                        <form class="quote__form" data-quote-form>
+                            <h4 class="quote__form__title">{% block form_title %}{% endblock %}</h4>
+                            <h6 class="quote__form__subtitle">{% block form_description %}{% endblock %}</h6>
+
+                            {% block content %}{% endblock %}
+
+                            {% block submit %}
+                                <div class="quote__form__submit clearfix">
+                                    <a class="quote__form__button quote__form__submit--main" data-continue>Continue</a>
+                                    <a class="quote__form__submit--secondary" data-back>Back</a>
+                                    <span class="quote__form__help">
+                                        Need help?
+                                        <a href="{% url 'www:contact' %}" target="_blank">Click here to contact us</a>
+                                    </span>
+                                </div>
+                            {% endblock %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

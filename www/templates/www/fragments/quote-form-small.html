@@ -1,0 +1,31 @@
+{% load static %}
+
+<form class="quote-form quote-form--small wrap" data-signup-form>
+    <div class="quote-form--small__text">
+        Get an instant quote for your vehicle!
+    </div>
+    <div class="quote-form--small__inputs">
+        <div class="quote-form--small__input-holder">
+            <div class="quote-form__side quote-form__side--registration">
+                <img src="{% static 'images/star-circle.png' %}">
+                <p>GB</p>
+            </div>
+            <input class="quote-form__registration" id="vrm" name="vrm" type="text" data-upper
+                   placeholder="Enter your reg">
+        </div>
+        <div class="quote-form--small__input-holder">
+            <div class="quote-form__side quote-form__side--postcode">
+                <img src="{% static 'images/crown.png' %}">
+                <p>GB</p>
+            </div>
+            <input class="quote-form__postcode" id="postcode" name="postcode" type="text" data-upper
+                   placeholder="Your postcode">
+        </div>
+        <div class="quote-form--small__cta-holder">
+            <a class="hero__form__submit" data-submit>
+                Get my instant quote
+                <i class="fas fa-play"></i>
+            </a>
+        </div>
+    </div>
+</form>

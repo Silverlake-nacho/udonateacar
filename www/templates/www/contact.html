@@ -1,0 +1,92 @@
+{% extends "www/base.html" %}
+{% load static %}
+
+{% block body_class %}hero__blue{% endblock %}
+
+{% block h1 %}CONTACT US{% endblock %}
+{% block h2 %}
+    UDonateacar is based at Silverlake Automotive Recycling’s head office in Shedfield, Southampton.
+{% endblock %}
+{% block extra_subtitle_classes %}hero__subtitle--large{% endblock %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="contact-card">
+            <div class="grid-x">
+                <div class="cell medium-9 contact-card__panel--left">
+                    {% if message_sent %}
+                        <h2 class="contact-card__title">Thank you for contacting us. Someone will be in touch soon.</h2>
+                    {% else %}
+                        <h2 class="contact-card__title">Want to ask a question?</h2>
+
+                        {% for message in messages %}
+                                <div class="contact-card__thank-you">{{ message }}</div>
+                        {% endfor %}
+
+                        <form action="?" class="contact-card__form" method="POST" data-contact-form>
+                            {% csrf_token %}
+                            <div class="grid-x">
+                                <div class="cell medium-6">
+                                    <label for="name" class="contact-card__label">Your name</label>
+                                    <input type="text" id="name" name="name" class="contact-card__input" required />
+                                </div>
+                                <div class="cell medium-6">
+                                    <label for="from_email" class="contact-card__label">Email address</label>
+                                    <input type="email" id="from_email" name="from_email" class="contact-card__input"
+                                           required />
+                                </div>
+                                <div class="cell medium-6">
+                                    <label for="phone" class="contact-card__label">Telephone number</label>
+                                    <input type="tel" inputmode="tel" id="phone" name="phone" class="contact-card__input" />
+                                </div>
+                                <div class="cell medium-6">
+                                    <label for="subject" class="contact-card__label">How can we help?</label>
+                                    <div class="contact-card__select__holder">
+                                        <select id="subject" name="subject" class="contact-card__select">
+                                            <option value="None" selected disabled>Please select</option>
+                                            <option value="I need a quote for my car">I need a quote for my car</option>
+                                            <option value="I would like to know more about UDonateacar">I would like to know more about UDonateacar</option>
+                                            <option value="I would like to donate">I would like to donate</option>
+                                            <option value="I have a press enquiry">I have a press enquiry</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="message" class="contact-card__label">Comments</label>
+                            <textarea name="message" id="message" cols="30" rows="10"
+                                      class="contact-card__textarea" required></textarea>
+
+                            <button class="contact-card__button" type="submit">SEND YOUR MESSAGE</button>
+                        </form>
+                    {% endif %}
+                </div>
+                <div class="cell medium-3 contact-card__panel--right">
+                    <h2 class="contact-card__title">Call us</h2>
+                    <p class="contact-card__text">
+                        01489 772244<br>
+                        Monday – Friday, 8:30am – 6pm<br>
+                        Saturday, 8:30am – 5pm<br>
+                        Sunday, 9:30am – 2pm
+                    </p>
+
+                    <h2 class="contact-card__title">Email us</h2>
+                    <p class="contact-card__text">support@UDonateacar.com</p>
+
+                    <h2 class="contact-card__title">Follow us online</h2>
+                    <a href="https://www.instagram.com/silverlakeautos/" class="contact-card__link" target="_blank">
+                        <i class="fab fa-instagram contact-card__icon"></i>
+                    </a>
+                    <a href="https://www.twitter.com/silverlakeautos/" class="contact-card__link" target="_blank">
+                        <i class="fab fa-twitter contact-card__icon"></i>
+                    </a>
+                    <a href="https://www.facebook.com/SilverlakeAutos/" class="contact-card__link" target="_blank">
+                        <i class="fab fa-facebook-f contact-card__icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-section"></div>
+{% endblock %}
