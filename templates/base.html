@@ -1,0 +1,98 @@
+{% load static %}
+{% load render_bundle render_entrypoint from webpack_loader %}
+<!DOCTYPE html>
+<html class="{% block html_classes %}{% endblock %}" lang="{{ html_language|default:"en" }}">
+  <head {% block head_attributes %}{% endblock %}>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.UDonateacar.com/{% block og_url %}{% endblock %}" />
+        <meta property="og:site_name" content="UDonateacar" />
+        <meta property="og:image" content="http://www.UDonateacar.com/page/1/images/petercoopersmaller.jpg"/>
+        <meta property="og:title" content="UDonateacar"/>
+        <meta property="og:description" content="
+            {% block og_description %}Make a difference today by donating your car to charity{% endblock %}
+        "/>
+        <title>
+            {% block title_tag %}
+                UDonateacar | {% block title %}Make a difference{% endblock %}
+            {% endblock title_tag %}
+        </title>
+        <meta name="description" content="
+            {% block description %}Make a difference today by donating your car to charity{% endblock %}
+        ">
+
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link rel="icon" href="{% static "images/favicon.ico" %}" type="image/png">
+
+        {# The google font CSS will inevitably ask for fonts.gstatic.com #}
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&amp;display=swap"
+              rel="stylesheet">
+        <link href="{% static "style/www.min.css" %}" rel="stylesheet">
+
+        {% render_bundle "runtime" %}
+
+        {# Make these json-script tags available as soon as possible #}
+        {# Browsers ignore scripts with non-standard types #}
+        {% if js_context %}
+          {{ js_context|json_script:"js-context" }}
+        {% endif %}
+
+        {# The snout is an extra bit on the head, but not always present #}
+        {% block snout %}{% endblock snout %}
+    </head>
+  <body class="{% block body_class %}{% endblock %}" {% block body_attributes %}{% endblock %}>
+
+    {% block header %}
+        <div class="nav">
+            <div class="nav__links" data-burger-menu>
+                <a href="{% url 'www:index' %}">Home</a>
+                <a href="{% url 'www:charities' %}">Charity Partner</a>
+                <a href="{% url 'www:how_it_works' %}">How It Works</a>
+                <a href="{% url 'www:faqs' %}">FAQs</a>
+                <a href="{% url 'www:news' %}">News & Events</a>
+                <a href="{% url 'www:testimonials' %}">Testimonials</a>
+                <a href="{% url 'www:contact' %}">Contact Us</a>
+                <div class="nav__links__close" data-close-burger><i class="fas fa-times"></i></div>
+            </div>
+            <div class="nav__burger" data-open-burger><i class="fas fa-bars"></i></div>
+        </div>
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="wbav__footer">
+        <div class="wrap grid-x">
+            <div class="cell medium-9">
+                <div class="wbav__footer__copyright">
+                    Copyright © {% now "Y" %} Silverlake Garage, Row Ash, Botley Road, Shedfield, Hampshire, SO32 2HL
+                    · <a href="{% url 'www:about' %}">About Us</a>
+                    · <a href="{% url 'www:privacy' %}">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="cell medium-3">
+                <div class="wbav__footer__social-links">
+                    <a href="https://www.instagram.com/silverlakeautos/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com/silverlakeautos/" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/SilverlakeAutos/" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block tail %}
+        {% render_entrypoint "www" %}
+    {% endblock %}
+  </body>
+</html>
