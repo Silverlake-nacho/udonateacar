@@ -4,7 +4,9 @@ django-4-jet==1.0.9
 django-summernote==0.8.20.0
 django-tinymce==3.0.2
 django-webpack4-loader==0.0.5
+environs[django]==9.5.0
 gunicorn==20.0.4
+setuptools<81
 mysqlclient==2.0.1
 python-slugify==4.0.0
 pytz==2020.1
